@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #controls {
+            font-size: 20px;
+            display: inline-block;
+        }
+        #full {
+            color: rgb(45, 89, 231);
+            font-size: 20px;
+        }
+        #minmax {
+            color: rgb(231, 162, 14);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resistor Color Code</h1>
+    <canvas id="canvas" height="280px" width="640px" style="border: 1px solid black"></canvas><br>
+    <div id="controls">
+            Resistance: <input type="text" id="resistance" value="4700"><br>
+            E Notation: <input type="text" id="enot" value="4.7k"><span id="enotwarn"></span><br>
+            Tolerance %: <input type="text" id="tolerance" value="5"><br><br>
+            Full Desc: <span id="full">4.7k Ω ± 5%</span><br>
+            Min/Max: <span id="minmax">4.47k to 4.94k Ohms</span><br><br>    
+            Band 1 (Digit 1): <input type="text" id="band1t" value="4" maxlength="1">
+            <select name="" id="band1s">
+                    <option value="brown" style="background-color: brown; color: white">brown</option>
+                    <option value="red" style="background-color: red; color: white">red</option>
+                    <option value="orange" style="background-color: rgb(255, 166, 0); color: black">orange</option>
+                    <option value="yellow" style="background-color: yellow; color: black" selected>yellow</option>
+                    <option value="green" style="background-color: green; color: white">green</option>
+                    <option value="blue" style="background-color: blue; color: white">blue</option>
+                    <option value="violet" style="background-color: rgb(148, 12, 148); color: white">violet</option>
+                    <option value="grey" style="background-color: grey; color: black">grey</option>
+                    <option value="white" style="background-color: white; color: black">white</option>
+            </select>
+            <br>
+            Band 2 (Digit 2): <input type="text" id="band2t" value="7" maxlength="1">
+            <select name="" id="band2s">
+                    <option value="black" style="background-color: black; color: white">black</option>
+                    <option value="brown" style="background-color: brown; color: white">brown</option>
+                    <option value="red" style="background-color: red; color: white">red</option>
+                    <option value="orange" style="background-color: rgb(255, 166, 0); color: black">orange</option>
+                    <option value="yellow" style="background-color: yellow; color: black">yellow</option>
+                    <option value="green" style="background-color: green; color: white">green</option>
+                    <option value="blue" style="background-color: blue; color: white">blue</option>
+                    <option value="violet" style="background-color: rgb(148, 12, 148); color: white" selected>violet</option>
+                    <option value="grey" style="background-color: grey; color: black">grey</option>
+                    <option value="white" style="background-color: white; color: black">white</option>
+            </select><br>
+            Band 3 (Mult): <input type="text" id="band3t" value="100" maxlength="10">
+            <select name="" id="band3s">
+                    <option value="black" style="background-color: black; color: white">black</option>
+                    <option value="brown" style="background-color: brown; color: white">brown</option>
+                    <option value="red" style="background-color: red; color: white" selected>red</option>
+                    <option value="orange" style="background-color: rgb(255, 166, 0); color: black">orange</option>
+                    <option value="yellow" style="background-color: yellow; color: black">yellow</option>
+                    <option value="green" style="background-color: green; color: white">green</option>
+                    <option value="blue" style="background-color: blue; color: white">blue</option>
+                    <option value="violet" style="background-color: rgb(148, 12, 148); color: white">violet</option>
+                    <option value="grey" style="background-color: grey; color: black">grey</option>
+                    <option value="white" style="background-color: white; color: black">white</option>
+                    <option value="gold" style="background-color: rgb(216, 163, 18); color: black">gold</option>
+                    <option value="silver" style="background-color: silver; color: black">silver</option>
+            </select><br>
+            Band 4 (Tolerance %): <input type="text" id="band4t" value="5">
+            <select name="" id="band4s">
+                    <option value="blank">blank</option>
+                    <option value="brown" style="background-color: brown; color: white">brown</option>
+                    <option value="red" style="background-color: red; color: white">red</option>
+                    <option value="green" style="background-color: green; color: white">green</option>
+                    <option value="blue" style="background-color: blue; color: white">blue</option>
+                    <option value="violet" style="background-color: rgb(148, 12, 148); color: white">violet</option>
+                    <option value="grey" style="background-color: grey; color: black">grey</option>
+                    <option value="gold" style="background-color: rgb(216, 163, 18); color: black" selected>gold</option>
+                    <option value="silver" style="background-color: silver; color: black">silver</option>
+            </select><br>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
